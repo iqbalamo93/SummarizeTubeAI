@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+langchain = "*"
+langchain-community = "*"
+langchain-core = "*"
+ipykernel = "*"
+youtube-transcript-api = "*"
+tiktoken = "*"
+chromadb = "*"
+openai = "*"
+langchain-openai = "*"
+streamlit = "*"
+pytube = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
