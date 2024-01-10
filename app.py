@@ -21,9 +21,6 @@ Also add '\n' in your answer as output will be used in python prrint function:
 CONCISE SUMMARY:'''
 prompt = PromptTemplate.from_template(prompt_template)
 
-llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo-16k")
-llm_chain = LLMChain(llm=llm, prompt=prompt)
-
 progress_bar = st.empty()
 def main():
     st.title('🎥 YouTube Video Summary Generator 📝')
@@ -32,6 +29,9 @@ def main():
     summary_button = st.button('🚀 Get Summary')
     if openai_key:
         os.environ["OPENAI_API_KEY"] = openai_key
+        llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo-16k")
+        llm_chain = LLMChain(llm=llm, prompt=prompt)
+
         loader = YoutubeLoader.from_youtube_url(input_url, add_video_info=False)
         
         if summary_button:
